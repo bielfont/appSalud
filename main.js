@@ -115,10 +115,8 @@ class Paciente{
 
     }
     obtenerEdad(){
-        //let edad = (this.fecha) - Date();
-        //console.log ('Fecha Actual' + new Date());
-        //console.log (' Fecha Nacimiento ' + this.fecha);
-        //console.log (' Edad ' + edad);
+       // var diferencia = new Date() - this.fecha
+       // return Math.floor(diferencia / (1000*60*60*24*365))
 
         var hoy = new Date();
         var cumpleanos = new Date(this.fecha);
