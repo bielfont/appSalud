@@ -1,11 +1,12 @@
 
+//  En lugar de separar por bascula.js y paciente.js unifique todo en main.js
 
 class Bascula{
     constructor(){
-        this.peso = []
-        this.altura = []
-        this.fecha = []
-        this.anotacion = 0
+        this.peso = [];
+        this.altura = [];
+        this.fecha = [];
+        this.anotacion = 0;
      
     }
     obtenerNumeroAnotaciones(){
@@ -14,9 +15,9 @@ class Bascula{
 
 
     }
-    anotarPeso(peso, altura){
-        this.anotacion +=1; //sumamos 1 a cada anotacion
-        this.fecha.push(new Date()); // ingresamos fecha actual
+    anotarPeso(peso, altura=1, fecha=new Date().toLocaleString().split(' ')){
+        this.anotacion++; //sumamos 1 a cada anotacion
+        this.fecha.push(); // ingresamos fecha actual
         this.peso.push(peso);
         this.altura.push(altura);
         
@@ -31,11 +32,11 @@ class Bascula{
 
     }
     calcularIMC(){
-        let imc = this.peso[this.peso.length-1]/(this.altura[this.altura.length-1]*this.altura[this.altura.length-1]); // calculamos imc de la ultima anotacion
+        let imc = this.peso[this.peso.length-1]/(this.altura[this.altura.length-1]*this.altura[this.altura.length-1]); // calculamos imc de la ultima anotacion, podriamos limitar decimales con .toFixed(2)
         return imc;
 
     }
-    describirIMC(imc){ //comparadores peso
+    describirIMC(imc){ //comparadores peso, de beria refacturizar para unica entrada y unica salida return..
         if (imc < 16  ) return "Delgado Severo";
         if (imc < 17 && imc > 16 ) return "Delgado Moderado";
         if (imc < 18.5 && imc > 16) return "Delgado Normal";
@@ -44,7 +45,7 @@ class Bascula{
         if (imc < 35 && imc > 30) return "Obeso I";
         if (imc < 40 && imc > 35) return "Obeso II";
         if (imc > 40 ) return "Obeso III";
-        
+        // return ......
     }
     
 }

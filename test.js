@@ -1,9 +1,15 @@
-// const assert = require('assert');
-const assert    = require('chai').assert;
-const expect    = require('chai').expect;
+const Bascula = require('./main');
+//const bascula1 = new (Bascula); - Lo dejamos incluido en main.js
+//bascula1.anotarPeso("73","1.66");
+//bascula1.anotarPeso("63","1.36");
+//bascula1.anotarPeso("83","1.86");
+
+
+const assert = require('chai').assert;
+const expect = require('chai').expect;
 const should = require('chai').should();
 
-const Bascula = require('./main');
+
 
 describe("Test using ASSERT interface from CHAI module: con datos anotarPeso(73,1.66)-(63,1.36)-(83,1.86)", function() {
   describe("Check 1: ", function() {
